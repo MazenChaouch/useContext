@@ -1,24 +1,20 @@
-// pages/HomePage.js
-import React, { useContext } from "react";
-import { StateContext } from "../contexts/StateContect";
 import { Link } from "react-router-dom";
 
-const HomePage = () => {
-  const { state, UpdateState } = useContext(StateContext);
+const Home = () => {
   return (
-    <div>
-      <h1>Home Page</h1>
-      <p>Current State:{state}</p>
-      <button
-        onClick={() => {
-          UpdateState("this my new state from home");
-        }}
+    <div className="min-h-screen bg-white text-black p-8">
+      <h1 className="text-4xl font-semibold mb-4">🏠 Home Page</h1>
+      <p className="text-lg mb-4">
+        Current Theme: <strong>Light</strong>
+      </p>
+      <Link
+        to="/settings"
+        className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700 transition"
       >
-        Update State
-      </button>
-      <Link to="/about">About</Link>
+        Go to Settings
+      </Link>
     </div>
   );
 };
 
-export default HomePage;
+export default Home;
